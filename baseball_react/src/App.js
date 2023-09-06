@@ -9,6 +9,7 @@ import PlayerSelection from "./components/PlayerSelection";
 import ResultPage from "./components/ResultPage";
 import { getAllPlayers } from "./data/repository";
 import PlayerContext, { PlayerProvider } from "./context/PlayerContext";
+import "./App.css";
 // Because our API is a free tier cloud service, it is not always quick to respond
 //for this reason I am going to have the data load into the APP Component with
 //a loading screen and store the data in context. This means that the data will
@@ -39,7 +40,7 @@ function App() {
         <Router>
           <Navbar />
           <div className="container">
-            <h5>
+            {/* <h5>
               Just putting the result page here for testing. Going to hardcode
               two ids. We will have to figure out how to get from player
               selection to results at a later time
@@ -47,7 +48,7 @@ function App() {
             <ResultPage
               p1_id={"64f3b2f3de07d4788d026398"}
               p2_id={"64f3b2f3de07d4788d026399"}
-            ></ResultPage>
+            ></ResultPage> */}
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="/about" element={<About />} />
