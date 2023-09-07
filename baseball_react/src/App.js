@@ -29,6 +29,7 @@ function App() {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching player data: ", error);
+        setLoading(true);
       }
     };
     fetchData();
