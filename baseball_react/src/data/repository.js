@@ -1,3 +1,4 @@
+const api_url = "https://cs628api.azurewebsites.net/players";
 //this class is responsible for fetching data from the API
 async function getAllPlayers() {
   const response = await fetch("https://cs628api.azurewebsites.net/players");
