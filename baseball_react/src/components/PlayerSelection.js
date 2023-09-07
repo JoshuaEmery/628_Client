@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import PlayerContext from "../context/PlayerContext";
 
-function PlayerSelection() {
+function PlayerSelection({ p1_callBack, p2_callBack, p1_clear, p2_clear }) {
   const navigate = useNavigate();
   const players = useContext(PlayerContext);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
@@ -19,8 +19,13 @@ function PlayerSelection() {
     // If already selected, unselect
     if (selectedPlayer1Index === index) {
       setSelectedPlayer1Index(null);
+      p1_clear();
+      //setPlayer1({});
     } else {
       setSelectedPlayer1Index(index);
+      const selectedPlayer = players.find((player) => player._id === p1_id);
+      p1_callBack(selectedPlayer);
+      //console.log(selectedPlayer);
     }
   };
   const handlePlayer2Click = (index, p2_id) => {
@@ -28,8 +33,13 @@ function PlayerSelection() {
     // If already selected, unselect
     if (selectedPlayer2Index === index) {
       setSelectedPlayer2Index(null);
+      p2_clear();
+      //setPlayer2({});
     } else {
       setSelectedPlayer2Index(index);
+      const selectedPlayer = players.find((player) => player._id === p2_id);
+      p2_callBack(selectedPlayer);
+      //console.log(selectedPlayer);
     }
   };
 

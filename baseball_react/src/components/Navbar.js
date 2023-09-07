@@ -8,7 +8,11 @@ const Navbar = () => {
       style={{ backgroundColor: "#003366" }}
     >
       <Link className="navbar-brand" to="/" style={{ color: "#FFFFFF" }}>
-        MyApp
+        <img
+          style={{ height: "30px", width: "30px" }}
+          src="/icon2.png"
+          alt=""
+        />
       </Link>
       <ul className="navbar-nav">
         <li className="nav-item">
