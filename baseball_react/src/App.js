@@ -58,7 +58,14 @@ function App() {
           <Navbar />
           <div className="container">
             {player1 && player2 ? (
-              <Comparison player1={player1} player2={player2} />
+              <Comparison
+                player1={player1}
+                player2={player2}
+                clearPlayers={() => {
+                  p1_clear();
+                  p2_clear();
+                }}
+              />
             ) : null}
 
             {/* <h5>
